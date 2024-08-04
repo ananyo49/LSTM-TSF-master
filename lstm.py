@@ -110,6 +110,8 @@ st.title('LSTM for Time Series Forecasting')
 st.markdown("In this article, we will be using a Long Short-Term Memory (LSTM) model to forecast air quality in Los Angeles, California. We will be using the Keras library to build our LSTM model.")
 st.markdown("<b>Category:</b> Time Series Forecasting and LSTM", unsafe_allow_html=True)
 st.markdown('<b>Objective:</b> of this project is to build an LSTM model that can forecast PM10 values in LA, California over X amount of time. The data used for this project was obtained from the EPA website.', unsafe_allow_html=True)
+st.markdown('The code for this project can be found in this [Github Repo](https://github.com/ananyo49/LSTM-TSF/tree/master).', unsafe_allow_html=True)
+
 
 
 #DATA ----------------------------------------------------------------------------------------------------------------------
