@@ -107,7 +107,7 @@ st.sidebar.markdown('GitHub: \n\n\n https://github.com/ananyo49')
 st.sidebar.markdown('LinkedIn: \n\n\n https://www.linkedin.com/in/ananya49/')
 
 st.title('LSTM for Time Series Forecasting')
-st.markdown("In this article, we will be using a Long Short-Term Memory (LSTM) model to forecast air quality in Los Angeles, California. We will be using the Keras library to build our LSTM model.")
+st.markdown("In this article, I will be using a Long Short-Term Memory (LSTM) model to forecast air quality in Los Angeles, California. I will use the Keras library to build our LSTM model.")
 st.markdown("<b>Category:</b> Time Series Forecasting and LSTM", unsafe_allow_html=True)
 st.markdown('<b>Objective:</b> To build an LSTM model that can forecast PM10 values in LA, California over X amount of time. The data used for this project was obtained from the EPA website.', unsafe_allow_html=True)
 st.markdown('The code for this project can be found in this [Github Repo](https://github.com/ananyo49/LSTM-TSF-master).', unsafe_allow_html=True)
@@ -125,7 +125,7 @@ st.markdown('''To download the exact data I used:
 6. Click "Get Data"
 7. Repeat for years 2021 and 2022''')
            
-st.markdown('We chose PM10 (Particulate Matter with a diameter of 10 micrometers or less) as our primary air quality metric because of its impact and presence. PM10 has a significant impact on human health and especially causing respiratory and cardiovascular issues. PM10 also has various emission sources, including from industrial activities, construction, vehicles, dust, etc. PM10 data is also widely available due to a plethora of air quality monitering stations and government agencies.' )
+st.markdown('I chose PM10 (Particulate Matter with a diameter of 10 micrometers or less) as our primary air quality metric because of its impact and presence. PM10 has a significant impact on human health and especially causing respiratory and cardiovascular issues. PM10 also has various emission sources, including from industrial activities, construction, vehicles, dust, etc. PM10 data is also widely available due to a plethora of air quality monitering stations and government agencies.' )
 st.markdown('Since this model is focused on forecasting PM10 values, I subsetted the data to only include the date and PM10 values. I also normalized the PM10 values to make it easier for the model to train on the data')
 col1, col2 = st.columns(2)
 
@@ -141,13 +141,13 @@ with col2:
 
 #MODEL ----------------------------------------------------------------------------------------------------------------------
 st.header('LSTM Model')
-st.markdown('We chose LSTM as our primary time series forecasting model for various reasons. Air pollution data often involves non-linear relationships and intricate patterns that may be difficult for linear models to capture. An LSTM is more flexible with this kind of task as it is designed to capture long term dependences in time series data and retain information from previous time steps. ')
-st.markdown('We used the Keras library to build our LSTM model. We used a single LSTM layer with 50 units, a dropout rate of 0.2, and a regularization rate of 0.02. We used the Adam optimizer and mean squared error as our loss function. We trained our model for 25 epochs.')
-st.markdown('''After multiple trials of training, we saw that our model's main problem was it was overfitting the data (trends were too accurate). To prevent overfiting we did the following: 
+st.markdown('I chose LSTM as our primary time series forecasting model for various reasons. Air pollution data often involves non-linear relationships and intricate patterns that may be difficult for linear models to capture. An LSTM is more flexible with this kind of task as it is designed to capture long term dependences in time series data and retain information from previous time steps. ')
+st.markdown('I used the Keras library to build our LSTM model. I used a single LSTM layer with 50 units, a dropout rate of 0.2, and a regularization rate of 0.02. I used the Adam optimizer and mean squared error as our loss function. We trained our model for 25 epochs.')
+st.markdown('''After multiple trials of training, I saw that our model's main problem was it was overfitting the data (trends were too accurate). To prevent overfitting I did the following: 
 1. **Reduced the number of training epochs (25)**: Helps prevent overfitting by limiting the model's exposure to the training data. Stopping the training earlier can improve the model's ability to generalize.
 2. **Chose the Exponential Linear Unit (ELU) activation function**: ELU can capture both positive and negative input regions (unlike ReLU which sets all negative input to 0) and returns non-zero outputs for negative input. By providing non-zero gradients for both positive and negative values, ELU helps maintain a more balanced and stable gradient flow throughout the network.
 3. **Added L2 regularizer**: The L2 regularizer encourages the weights to be small, which reduces the model's complexity and prevents hte model from becoming too specialized to the training data (better generalized performance).
-4. **Increased Dropout rate (0.6)**: We increased the drop out rate to reduce the model's reliance on specific inputs/features and encourages generalization.
+4. **Increased Dropout rate (0.6)**: I increased the dropout rate to reduce the model's reliance on specific inputs/features and encourages generalization.
 ''')
 model = load()
 st.markdown("## Model Summary")
